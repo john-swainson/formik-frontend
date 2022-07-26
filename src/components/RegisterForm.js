@@ -3,7 +3,6 @@ import { isEmpty } from "lodash";
 import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import breakpoint from "styled-components-breakpoint";
 
 import { Button, CustomInput } from "../components/atoms";
 import sampleData from "../assets/jsons/sample.json";
@@ -14,9 +13,9 @@ const FormWrapper = styled.div`
   display: grid;
   gap: 16px;
 
-  ${breakpoint("md")`
+  @media only screen and (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
-  `}
+  }
 `;
 
 const StyledFormRow = styled.div`
@@ -60,6 +59,7 @@ const RegisterForm = () => {
                 placeholder={field.placeholder}
                 component={CustomInput}
                 type={field.type}
+                data-testid={field.id}
               >
                 {field.type === "select"
                   ? field.options.map((option) => (

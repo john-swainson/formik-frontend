@@ -1,7 +1,6 @@
 import { isEmpty } from "lodash";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import breakpoint from "styled-components-breakpoint";
 
 import sampleData from "../assets/jsons/sample.json";
 import { reset } from "../store/feature/user";
@@ -16,9 +15,9 @@ const StyledWrapper = styled.div`
   display: grid;
   gap: 16px;
 
-  ${breakpoint("md")`
+  @media only screen and (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
-  `}
+  }
 `;
 
 const StyledRow = styled.div`
@@ -49,7 +48,9 @@ const UserSubmission = ({ user }) => {
         {sampleData.map((field) => (
           <StyledRow key={field.id}>
             <StyledLabel>{field.label ?? field.placeholder}:</StyledLabel>
-            <StyledSpan>{!isEmpty(user[field.id]) ? user[field.id] : 'N/A'}</StyledSpan>
+            <StyledSpan data-testid={`text-${field.id}`}>
+              {!isEmpty(user[field.id]) ? user[field.id] : 'N/A'}
+            </StyledSpan>
           </StyledRow>
         ))}
         <Button onClick={handleBack}>Back</Button>

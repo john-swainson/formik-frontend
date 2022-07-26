@@ -41,9 +41,11 @@ const CustomInput = ({
         type === 'textarea' ? (
           <StyledTextArea {...field} {...props} />
         ) : (
-          <StyledSelect type="text" {...field} {...props}>
-            {children}
-          </StyledSelect>
+          type === 'select' ? (
+            <StyledSelect {...field} {...props}>
+              {children}
+            </StyledSelect>
+          ) : null
         )
       )}
       {touched[field.name] &&

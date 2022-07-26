@@ -1,0 +1,65 @@
+[
+  {
+    "id": "firstName",
+    "placeholder": "First name",
+    "required": true,
+    "type": "input"
+  },
+  {
+    "id": "lastName",
+    "placeholder": "Last name",
+    "required": true,
+    "type": "input"
+  },
+  {
+    "id": "email",
+    "placeholder": "Email",
+    "required": true,
+    "type": "input"
+  },
+  {
+    "id": "address1",
+    "placeholder": "Address 1",
+    "type": "input"
+  },
+  {
+    "id": "city",
+    "placeholder": "City",
+    "type": "input"
+  },
+  {
+    "id": "state",
+    "placeholder": "State",
+    "type": "input"
+  },
+  {
+    "id": "zip",
+    "placeholder": "ZipCode",
+    "type": "input"
+  },
+  {
+    "id": "phone",
+    "placeholder": "Phone",
+    "required": true,
+    "type": "input"
+  },
+  {
+    "id": "jobTitle",
+    "options": [
+      "Engineer - lead",
+      "Engineer - mid level",
+      "Engineer - junion",
+      "Engineer - front end focused",
+      "Engineer - backend focused",
+      "Engineer - full stack"
+    ],
+    "placeholder": "Please select job title",
+    "type": "select"
+  },
+  {
+    "id": "reason",
+    "label": "Why you are a good fit for the job",
+    "placeholder": "Describe why you are a good fit for the job you are applying for.",
+    "type": "textarea"
+  }
+]
